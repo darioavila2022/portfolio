@@ -1,4 +1,3 @@
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -22,8 +21,7 @@ function Cards() {
                             data-aos-duration="1000"
                         >
                             <Card className="d-flex mt-4">
-                                <Card.Img src={item.img} alt="card" height="320">
-                                </Card.Img>
+                                <Card.Img src={item.img} alt="card" height="320"></Card.Img>
                                 <Card.Body>
                                     <Card.Text className="card-text py-4">{item.desc}</Card.Text>
                                     <div className="d-flex justify-content-between align-items-center">
