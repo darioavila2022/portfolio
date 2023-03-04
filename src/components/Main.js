@@ -29,11 +29,13 @@ const Main = () => {
                             <Link to="mailto:darioaaron.avila@gmail.com?subject='Hello from the web!'&body='Just popped in to say hello. Let's talk business.'">
                                 <button type="button" className="btn btn-outline-secondary btn-lg px-4">Email Me</button>
                             </Link>
+     
                         </div>
                     </div>
 
+                
                     <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg d-flex justify-content-center">
-                        <img className="rounded-lg-3" src={photo} width="600" alt="Front"></img>
+                        <img src={photo} width="600" alt="Front"></img>
                     </div>
                 </div>
             </div>
