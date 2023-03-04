@@ -3,6 +3,7 @@ import Main from '../components/Main';
 import Cards from '../components/Cards';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
+import Credly from '../components/Credly';
 
 function Porfolio() {
     return (

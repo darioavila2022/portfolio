@@ -21,7 +21,7 @@ const Main = () => {
 
                         <div className="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3 mt-4">
                             <a href={resume} target="_blank">
-                                <button type="button" className="btn btn-dark btn-lg px-4 me-md-2 fw-bold">
+                                <button type="button" className="btn btn-dark btn-lg px-4 me-md-2 btns">
                                     Download CV
                                 </button>
                             </a>

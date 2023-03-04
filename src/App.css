@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Numans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100&display=swap');
 
 .logo {
     font-family: 'Major Mono Display', monospace;
 }
 
-.mytitle, .subtitle, .content {
+.mytitle, .subtitle, .content, .btns {
     font-family: 'Numans', sans-serif;
+}
+
+.nav-link {
+    cursor: pointer
 }
 

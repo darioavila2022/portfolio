@@ -7,7 +7,7 @@ import { cards } from "../data/cards";
 
 function Cards() {
     return (
-        <Container className="content">
+        <Container className="content" id="projects">
             <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 2 }} lg={{ cols: 3 }}>
                 {cards.map(item =>
                     <Col>

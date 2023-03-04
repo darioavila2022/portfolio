@@ -41,7 +41,7 @@ function Contact() {
     }
 
     return (
-        <Container className="content py-4">
+        <Container className="content py-4" id="socials">
             <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 1 }} lg={{ cols: 2 }} className="my-5">
                 <Col>
                     <div className="h-100 p-5 text-bg-dark rounded-3">
@@ -67,7 +67,7 @@ function Contact() {
                                 <button type="submit" className="btn btn-light"
                                     // data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"
-                                >Send 📨</button>
+                                >Send</button>
                             </div>
                         </form>
 
@@ -76,7 +76,7 @@ function Contact() {
 
                 <Col>
                     <div className="h-100 p-5 bg-light border rounded-3">
-                        <h4>Let's get in touch!</h4>
+                        <h4>Let's get in touch</h4>
                         <hr />
                         {contact.map(item =>
                             <ListGroup>
