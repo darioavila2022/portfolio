@@ -1,6 +1,7 @@
 import mail from '../images/mail.svg'
 import phone from '../images/phone.svg'
 import map from '../images/map.svg'
+import linkedin from '../images/linkedin.svg'
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import FirebaseDb from '../firebase/firebase.js';
 import { useState } from 'react';
@@ -40,11 +41,12 @@ function Contact() {
     }
 
     return (
-        <Container>
-            <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 2 }} lg={{ cols: 2 }}>
+        <Container className="content py-4">
+            <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 1 }} lg={{ cols: 2 }} className="my-5">
                 <Col>
                     <div className="h-100 p-5 text-bg-dark rounded-3">
-
+                        <h4>Send me a message</h4>
+                        <hr />
                         <form onSubmit={Submit} className="needs-validation" novalidate>
                             <label for="email" className="form-label">Email</label>
                             <div className="input-group has-validation">
@@ -55,13 +57,13 @@ function Contact() {
                                 </div>
                             </div>
 
-                            <label for="message" className="form-label">Message</label>
+                            <label for="message" className="form-label mt-2">Message</label>
                             <textarea type="text" className="form-control" id="message" value={message} required
                                 onChange={(e) => setMessage(e.target.value)} />
                             <div className="invalid-feedback">
                                 Please provide a message.
                             </div>
-                            <div className="col-12 mt-2">
+                            <div className="col-12 mt-4">
                                 <button type="submit" className="btn btn-light"
                                     // data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"
@@ -72,15 +74,20 @@ function Contact() {
                     </div>
                 </Col>
 
-                <div className="p-5 bg-light border rounded-3">
-                    {contact.map(item =>
-                        <ListGroup>
-                            <ListGroup.Item><img src={mail} width="30" height="28" className="mx-2" alt="email" />{item.email} </ListGroup.Item>
-                            <ListGroup.Item><img src={phone} width="30" height="28" className="mx-2" alt="phone" />{item.phone}</ListGroup.Item>
-                            <ListGroup.Item><img src={map} width="30" height="28" className="mx-2" alt="map" />{item.map}</ListGroup.Item>
-                        </ListGroup>
-                    )}
-                </div>
+                <Col>
+                    <div className="h-100 p-5 bg-light border rounded-3">
+                        <h4>Let's get in touch!</h4>
+                        <hr />
+                        {contact.map(item =>
+                            <ListGroup>
+                                <ListGroup.Item><img src={mail} width="30" height="28" className="mx-2" alt="email" />{item.email} </ListGroup.Item>
+                                <ListGroup.Item><img src={phone} width="30" height="28" className="mx-2" alt="phone" />{item.phone}</ListGroup.Item>
+                                <ListGroup.Item><img src={map} width="30" height="28" className="mx-2" alt="map" />{item.map}</ListGroup.Item>
+                                <ListGroup.Item><img src={linkedin} width="30" height="28" className="mx-2" alt="linkdin" />{item.linkedin}</ListGroup.Item>
+                            </ListGroup>
+                        )}
+                    </div>
+                </Col>
             </Row>
 
             <Modal show={show} onHide={handleClose}>

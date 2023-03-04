@@ -7,18 +7,18 @@ import { cards } from "../data/cards";
 
 function Cards() {
     return (
-        <Container>
+        <Container className="content">
             <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 2 }} lg={{ cols: 3 }}>
                 {cards.map(item =>
                     <Col>
                         <Card className="d-flex mt-4">
-                            <Card.Img src={item.img} alt="Human"  ></Card.Img>
+                            <Card.Img src={item.img} alt="card"></Card.Img>
                             <Card.Body>
-                                <Card.Text className="card-text">{item.desc}</Card.Text>
+                                <Card.Text className="card-text py-4">{item.desc}</Card.Text>
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="btn-group">
-                                        <Link to={`${item.demo}`} className="btn btn-sm btn-outline-secondary" role="button">Demo</Link>
-                                        <Link to={`${item.repo}`} className="btn btn-sm btn-outline-secondary" role="button">Source Code</Link>
+                                        <Link to={`${item.demo}`} className="btn btn-sm btn-outline-dark" role="button">Demo</Link>
+                                        <Link to={`${item.repo}`} className="btn btn-sm btn-secondary" role="button">Source Code</Link>
                                     </div>
                                     <small className="text-muted">{item.hash}</small>
                                 </div>

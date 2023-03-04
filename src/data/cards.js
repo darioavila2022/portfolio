@@ -1,7 +1,7 @@
 export const cards = [
     {
         img: "https://st.depositphotos.com/1052493/54990/v/450/depositphotos_549901044-stock-illustration-startup-illustration-concept-of-building.jpg",
-        desc: "This project aims to display blank cassette tapes from a record store, including filtering, Paypal implementation and registering.",
+        desc: "This project aims to display blank cassette tapes from an e-commerce record store, including filtering products, checkout with Paypal and authentication.",
         demo: "https://master--superb-sunburst-e0eb4e.netlify.app/",
         repo: "https://github.com/darioavila2022/ecommerce-app-project",
         hash: "#React #MongoDB #Redux"

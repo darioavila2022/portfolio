@@ -20,13 +20,13 @@ const Footer = () => {
                 </div>
                 {socials.map(item =>
                     <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li className="ms-3"><a className="text-muted" href={item.ig}><img src={instagram} width="30" height="24" alt="Twitter" /></a></li>
-                        <li className="ms-3"><a className="text-muted" href={item.linkedin}><img src={linkedin} width="30" height="24" alt="LinkedIn" /></a></li>
-                        <li className="ms-3"><a className="text-muted" href={item.gh}><img src={github} width="30" height="24" alt="Github" /></a></li>
-                        <li className="ms-3"><a className="text-muted" href={item.stack}><img src={stackoverflow} width="30" height="24" alt="Twitter" /></a></li>
-                        <li className="ms-3"><a className="text-muted" href={item.tw}><img src={twitter} width="30" height="24" alt="Twitter" /></a></li>
-                        <li className="ms-3"><a className="text-muted" href={item.fb}><img src={facebook} width="30" height="24" alt="Twitter" /></a></li>
-                        <li className="ms-3"><a className="text-muted" href={item.reddit}><img src={reddit} width="30" height="24" alt="Twitter" /></a></li>
+                        <li className="ms-3"><a className="text-muted" href={item.ig}><img src={instagram} width="30" height="24" alt="ig" /></a></li>
+                        <li className="ms-3"><a className="text-muted" href={item.linkedin}><img src={linkedin} width="30" height="24" alt="lkin" /></a></li>
+                        <li className="ms-3"><a className="text-muted" href={item.gh}><img src={github} width="30" height="24" alt="gh" /></a></li>
+                        <li className="ms-3"><a className="text-muted" href={item.stack}><img src={stackoverflow} width="30" height="24" alt="stack" /></a></li>
+                        <li className="ms-3"><a className="text-muted" href={item.tw}><img src={twitter} width="30" height="24" alt="tw" /></a></li>
+                        <li className="ms-3"><a className="text-muted" href={item.fb}><img src={facebook} width="30" height="24" alt="fb" /></a></li>
+                        <li className="ms-3"><a className="text-muted" href={item.reddit}><img src={reddit} width="30" height="24" alt="rd" /></a></li>
                     </ul>
                 )}
             </footer>
