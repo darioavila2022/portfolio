@@ -42,53 +42,58 @@ function Contact() {
 
     return (
         <Container className="content py-4" id="socials">
-            <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 1 }} lg={{ cols: 2 }} className="my-5">
-                <Col>
-                    <div className="h-100 p-5 text-bg-dark rounded-3">
-                        <h4>Send me a message</h4>
-                        <hr />
-                        <form onSubmit={Submit} className="needs-validation" novalidate>
-                            <label for="email" className="form-label">Email</label>
-                            <div className="input-group has-validation">
-                                <input type="email" className="form-control" id="email" value={email} aria-describedby="inputGroupPrepend" required
-                                    onChange={(e) => setEmail(e.target.value)} />
-                                <div className="invalid-feedback">
-                                    Please write your email.
+            <div data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000">
+
+                <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 1 }} lg={{ cols: 2 }} className="my-5">
+                    <Col>
+                        <div className="h-100 p-5 text-bg-dark rounded-3">
+                            <h4>Send me a message</h4>
+                            <hr />
+                            <form onSubmit={Submit} className="needs-validation" novalidate>
+                                <label for="email" className="form-label">Email</label>
+                                <div className="input-group has-validation">
+                                    <input type="email" className="form-control" id="email" value={email} aria-describedby="inputGroupPrepend" required
+                                        onChange={(e) => setEmail(e.target.value)} />
+                                    <div className="invalid-feedback">
+                                        Please write your email.
+                                    </div>
                                 </div>
-                            </div>
 
-                            <label for="message" className="form-label mt-2">Message</label>
-                            <textarea type="text" className="form-control" id="message" value={message} required
-                                onChange={(e) => setMessage(e.target.value)} />
-                            <div className="invalid-feedback">
-                                Please provide a message.
-                            </div>
-                            <div className="col-12 mt-4">
-                                <button type="submit" className="btn btn-light"
-                                    // data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"
-                                >Send</button>
-                            </div>
-                        </form>
+                                <label for="message" className="form-label mt-2">Message</label>
+                                <textarea type="text" className="form-control" id="message" value={message} required
+                                    onChange={(e) => setMessage(e.target.value)} />
+                                <div className="invalid-feedback">
+                                    Please provide a message.
+                                </div>
+                                <div className="col-12 mt-4">
+                                    <button type="submit" className="btn btn-light"
+                                        // data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                    >Send</button>
+                                </div>
+                            </form>
 
-                    </div>
-                </Col>
+                        </div>
+                    </Col>
 
-                <Col>
-                    <div className="h-100 p-5 bg-light border rounded-3">
-                        <h4>Let's get in touch</h4>
-                        <hr />
-                        {contact.map(item =>
-                            <ListGroup>
-                                <ListGroup.Item><img src={mail} width="30" height="28" className="mx-2" alt="email" />{item.email} </ListGroup.Item>
-                                <ListGroup.Item><img src={phone} width="30" height="28" className="mx-2" alt="phone" />{item.phone}</ListGroup.Item>
-                                <ListGroup.Item><img src={map} width="30" height="28" className="mx-2" alt="map" />{item.map}</ListGroup.Item>
-                                <ListGroup.Item><img src={linkedin} width="30" height="28" className="mx-2" alt="linkdin" />{item.linkedin}</ListGroup.Item>
-                            </ListGroup>
-                        )}
-                    </div>
-                </Col>
-            </Row>
+                    <Col>
+                        <div className="h-100 p-5 bg-light border rounded-3">
+                            <h4>Let's get in touch</h4>
+                            <hr />
+                            {contact.map(item =>
+                                <ListGroup>
+                                    <ListGroup.Item><img src={mail} width="30" height="28" className="mx-2" alt="email" />{item.email} </ListGroup.Item>
+                                    <ListGroup.Item><img src={phone} width="30" height="28" className="mx-2" alt="phone" />{item.phone}</ListGroup.Item>
+                                    <ListGroup.Item><img src={map} width="30" height="28" className="mx-2" alt="map" />{item.map}</ListGroup.Item>
+                                    <ListGroup.Item><img src={linkedin} width="30" height="28" className="mx-2" alt="linkdin" />{item.linkedin}</ListGroup.Item>
+                                </ListGroup>
+                            )}
+                        </div>
+                    </Col>
+                </Row>
+            </div>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

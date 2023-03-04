@@ -27,24 +27,24 @@ function Credly() {
     <Container>
       <Row md={4} className="g-1">
         <Col>
-          <Link to={badges[0].url}>
-            <img src={badges[0].img} height="40"></img>
+          <Link to={badges[0].url} >
+            <img src={badges[0].img} height="40" className="badgeurl"></img>
           </Link>
         </Col>
 
         <Col>
-          <Link to={badges[1].url}>
-            <img src={badges[1].img} height="40"></img>
+          <Link to={badges[1].url} >
+            <img src={badges[1].img} height="40" className="badgeurl"></img>
           </Link>
         </Col>
         <Col>
-          <Link to={badges[2].url}>
-            <img src={badges[2].img} height="40"></img>
+          <Link to={badges[2].url} className="badgeurl">
+            <img src={badges[2].img} height="40" className="badgeurl"></img>
           </Link>
         </Col>
         <Col>
-          <Link to={badges[3].url}>
-            <img src={badges[3].img} height="40"></img>
+          <Link to={badges[3].url} className="badgeurl">
+            <img src={badges[3].img} height="40" className="badgeurl"></img>
           </Link>
         </Col>
       </Row>

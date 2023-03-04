@@ -7,11 +7,31 @@
     font-family: 'Major Mono Display', monospace;
 }
 
-.mytitle, .subtitle, .content, .btns {
+.mytitle,
+.subtitle,
+.content,
+.btns {
     font-family: 'Numans', sans-serif;
 }
 
 .nav-link {
-    cursor: pointer
+    cursor: pointer;
+    transition: all .2s ease-in
 }
 
+.badgeurl,
+.icons {
+    transition: all .2s ease-in-out
+}
+
+.badgeurl:hover {
+    transform: scale(1.1)
+}
+
+.icons:hover {
+    transform: scale(1.1)
+}
+
+.btns {
+    transition: all .2s ease-in
+}

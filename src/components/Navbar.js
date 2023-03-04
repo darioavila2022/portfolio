@@ -7,20 +7,42 @@ const AppNav = () => {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand className="logo">DA</Navbar.Brand>
+
+                <div data-aos="fade-right"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000">
+                    <Navbar.Brand className="logo">DA</Navbar.Brand>
+                </div>
+
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">•</Nav.Link>
+                    <div data-aos="fade-right"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000">
+                        <Nav.Link href="#home">•</Nav.Link>
+                    </div>
+
                     <Link className="nav-link" activeClass="active" to="projects" spy={true} smooth={true} duration={500}>
                         Projects
                     </Link>
-                    <Nav.Link href="#home">•</Nav.Link>
+
+                    <div data-aos="fade-right"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000">
+                        <Nav.Link href="#home">•</Nav.Link>
+                    </div>
+
                     <Link className="nav-link" activeClass="active" to="socials" spy={true} smooth={true} duration={500}>
                         Socials
                     </Link>
+
                 </Nav>
 
                 <Nav>
-                    <Credly />
+                    <div data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000">
+                        <Credly />
+                    </div>
                 </Nav>
 
             </Container>
