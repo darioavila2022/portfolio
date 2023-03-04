@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import resume from '../assets/resume.pdf'
-import { main } from '../assets/main'
+import resume from '../data/resume.pdf'
+import { main } from '../data/main'
+import { Container } from "react-bootstrap";
 
 const Main = () => {
     return (
-        <div>
+        <Container>
+
             <div className="container my-5">
                 <div className="row p-4 pb-0 pe-lg-0 pt-lg-0 align-items-center rounded-3 border shadow-lg">
 
@@ -40,7 +42,9 @@ const Main = () => {
                 </div>
 
             </div>
-        </div>
+
+            
+        </Container>
     )
 };
 

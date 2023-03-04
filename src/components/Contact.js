@@ -1,17 +1,23 @@
 import mail from '../images/mail.svg'
 import phone from '../images/phone.svg'
 import map from '../images/map.svg'
-import { contact } from '../assets/contact'
-
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import FirebaseDb from '../firebase/firebase.js';
 import { useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Button, ListGroup, Modal } from 'react-bootstrap';
+import { contact } from '../data/contact'
 
-const Contact = () => {
+function Contact() {
 
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
-    const [open, setOpen] = useState(false);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const db = getFirestore(FirebaseDb);
     const dbRef = collection(db, "contacts");
@@ -26,6 +32,7 @@ const Contact = () => {
         addDoc(dbRef, data)
             .then((docRef) => {
                 console.log("Document added successfully");
+                handleShow()
             })
             .catch(error => {
                 console.log(error);
@@ -33,82 +40,59 @@ const Contact = () => {
     }
 
     return (
-        <div>
-
-            <div className="container py-4">
-
-                <div className="row align-items-md-stretch">
-                    <div className="col-md-6">
-                        <div className="h-100 p-5 text-bg-dark rounded-3">
-
-                            <form onSubmit={Submit} className="needs-validation" novalidate>
-
-                                <label for="email" className="form-label">Email</label>
-                                <div className="input-group has-validation">
-                                    {/* <span className="input-group-text" id="inputGroupPrepend">@</span> */}
-                                    <input type="email" className="form-control" id="email" value={email} aria-describedby="inputGroupPrepend" required
-                                        onChange={(e) => setEmail(e.target.value)} />
-                                    <div className="invalid-feedback">
-                                        Please write your email.
-                                    </div>
-                                </div>
-
-                                <label for="message" className="form-label">Message</label>
-                                <textarea type="text" className="form-control" id="message" value={message} required
-                                    onChange={(e) => setMessage(e.target.value)} />
+        <Container>
+            <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 2 }} lg={{ cols: 2 }}>
+                <Col>
+                    <div className="h-100 p-5 text-bg-dark rounded-3">
+                        <form onSubmit={Submit} className="needs-validation" novalidate>
+                            <label for="email" className="form-label">Email</label>
+                            <div className="input-group has-validation">
+                                <input type="email" className="form-control" id="email" value={email} aria-describedby="inputGroupPrepend" required
+                                    onChange={(e) => setEmail(e.target.value)} />
                                 <div className="invalid-feedback">
-                                    Please provide a message.
+                                    Please write your email.
                                 </div>
+                            </div>
 
-                                <div className="col-12 mt-2">
-                                    {/* <button className="btn btn-primary" type="submit">Submit form</button> */}
-                                    <button type="submit" className="btn btn-light"
-                                        // data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"
-                                    >Send 📨</button>
-                                </div>
-                            </form>
-
-                        </div>
+                            <label for="message" className="form-label">Message</label>
+                            <textarea type="text" className="form-control" id="message" value={message} required
+                                onChange={(e) => setMessage(e.target.value)} />
+                            <div className="invalid-feedback">
+                                Please provide a message.
+                            </div>
+                            <div className="col-12 mt-2">
+                                <button type="submit" className="btn btn-light"
+                                    // data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal"
+                                >Send 📨</button>
+                            </div>
+                        </form>
                     </div>
-                    <div className="col-md-6">
-                        <div className="h-100 p-5 bg-light border rounded-3">
-                            {contact.map(item =>
-
-                                <div className="c.col-sm-6 .col-md-5 .col-lg-6">
-                                    <ul className="nav col-md-8 d-block">
-                                        <li className="ms-1"><a className="text-muted" href="#"><img src={mail} width="30" height="24" alt="Twitter" />{item.email}</a></li>
-                                        <li className="ms-1"><a className="text-muted" href="#"><img src={phone} width="30" height="24" alt="Twitter" />{item.phone}</a></li>
-                                        <li className="ms-1"><a className="text-muted" href="#"><img src={map} width="30" height="24" alt="Twitter" />{item.map}</a></li>
-                                    </ul>
-                                </div>
-                            )}
-                        </div>
-                    </div>
+                </Col>
+                <div className="p-5 bg-light border rounded-3">
+                    {contact.map(item =>
+                        <ListGroup>
+                            <ListGroup.Item><img src={mail} width="30" height="28" className="mx-2" alt="email" />{item.email} </ListGroup.Item>
+                            <ListGroup.Item><img src={phone} width="30" height="28" className="mx-2" alt="phone" />{item.phone}</ListGroup.Item>
+                            <ListGroup.Item><img src={map} width="30" height="28" className="mx-2" alt="map" />{item.map}</ListGroup.Item>
+                        </ListGroup>
+                    )}
                 </div>
+            </Row>
 
-
-            </div>
-
-            <div className="modal fade modal-wrap display-none" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Thank you!</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            Contact successful, we'll be in touch!
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    )
-};
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Contact successful!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Thank you for your message, we'll be in touch soon.</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </Container>
+    );
+}
 
 export default Contact;
