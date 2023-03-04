@@ -44,6 +44,7 @@ function Contact() {
             <Row xs={{ cols: 1, gutter: 4 }} md={{ cols: 2 }} lg={{ cols: 2 }}>
                 <Col>
                     <div className="h-100 p-5 text-bg-dark rounded-3">
+
                         <form onSubmit={Submit} className="needs-validation" novalidate>
                             <label for="email" className="form-label">Email</label>
                             <div className="input-group has-validation">
@@ -67,8 +68,10 @@ function Contact() {
                                 >Send 📨</button>
                             </div>
                         </form>
+
                     </div>
                 </Col>
+
                 <div className="p-5 bg-light border rounded-3">
                     {contact.map(item =>
                         <ListGroup>
