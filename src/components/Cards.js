@@ -7,7 +7,7 @@ const Cards = () => {
             <div className="album py-5 container my-5">
                 <div className="container">
 
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-sm-3 g-3">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
 
                         {cards.map(item =>
                             <div className="col">

@@ -36,9 +36,9 @@ export const cards = [
     },
     {
         img: "https://st.depositphotos.com/1052493/54918/v/450/depositphotos_549181154-stock-illustration-startup-illustration-concept-of-building.jpg",
-        desc: "Finally this is my git repository. Here I have uploaded my side proyects and ",
-        demo: "https://serene-begonia-343ec4.netlify.app/",
-        repo: "https://github.com/darioavila2022/Landing-project",
-        hash: "#HTML #CSS"
+        desc: "Finally, this is my git repository. Here I have uploaded my side proyects and things that I'm working on, come and take a look!",
+        demo: "https://github.com/darioavila2022?tab=repositories",
+        repo: "https://github.com/darioavila2022",
+        hash: "#HTML #CSS #JS"
     },
 ]

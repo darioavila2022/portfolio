@@ -1,21 +1,23 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
     return (
         <div  >
-            <nav class="  navbar navbar-expand navbar-dark bg-dark " aria-label="Second navbar example">
-                
-                <div class="container-fluid ">
-                    <a class="navbar-brand">DARÍO ÁVILA</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+            <nav className="  navbar navbar-expand navbar-dark bg-dark " aria-label="Second navbar example">
+
+                <div className="container-fluid ">
+                    <a className="navbar-brand">DARÍO ÁVILA</a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarsExample02">
-                        <ul class="navbar-nav me-auto ">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Projects</a>
+                    <div className="collapse navbar-collapse" id="navbarsExample02">
+                        <ul className="navbar-nav me-auto ">
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="#">Projects</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Socials</a>
                             </li>
                         </ul>
                     </div>
